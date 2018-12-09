@@ -1,0 +1,25 @@
+{{> header}}
+
+<section id="viewMyFlights">
+    <h3>Your Flights</h3>
+    {{#each flights}}
+    <div class="flight-ticket">
+        <div class="flight-left">
+            <img src="{{this.image}}" alt="">
+        </div>
+        <div class="flight-right">
+            <div>
+                <h3>{{this.destination}}</h3><span>{{this.departureDate}}</span>
+            </div>
+            <div>
+                from {{this.origin}} <span>{{this.departureTime}}</span>
+            </div>
+            <p>{{this.seats}} Seats ({{thiscostPerSeat}}$ per seat) </p>
+            <a href="#/remove-flight/{{this._id}}" class="remove">REMOVE</a>
+            <a href="#/details/{{this._id}}" class="details">Details</a>
+        </div>
+    </div>
+    {{/each}}
+</section>
+
+{{> footer}}
